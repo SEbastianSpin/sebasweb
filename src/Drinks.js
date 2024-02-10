@@ -1,12 +1,4 @@
-import {
-  Tabs,
-  Tab,
-  Card,
-  CardBody,
-  CardFooter,
-  Image,
-  Button,
-} from "@nextui-org/react";
+import { Tabs, Tab, Card, CardBody, Image } from "@nextui-org/react";
 export default function Drinks() {
   return (
     <div className="flex w-full flex-col items-center">

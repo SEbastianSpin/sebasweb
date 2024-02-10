@@ -3,7 +3,6 @@ import { useState } from "react";
 
 // NextUiStuff
 import { NextUIProvider } from "@nextui-org/react";
-import { Avatar } from "@nextui-org/react";
 import { Switch } from "@nextui-org/react";
 
 import "./App.css";

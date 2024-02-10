@@ -4,11 +4,6 @@ import { InView } from "react-intersection-observer";
 import { Card, CardBody, Image } from "@nextui-org/react";
 
 function CardEntry({ imageUrl, title, description }) {
-  const cardVariants = {
-    hidden: { opacity: 0, y: -50 },
-    visible: { opacity: 1, y: 0 },
-  };
-
   return (
     <motion.div
       initial={{ opacity: 0, x: -200 }}
@@ -85,6 +80,7 @@ export default function MainDishes() {
               description={item.description}
             />
           ))}
+          {isVisible}
         </>
       )}
     </InView>
