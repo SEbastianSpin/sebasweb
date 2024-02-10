@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+//react stuff
+import { useState } from "react";
+
+// NextUiStuff
+import { NextUIProvider } from "@nextui-org/react";
+import { Avatar } from "@nextui-org/react";
+import { Switch } from "@nextui-org/react";
+
+import "./App.css";
+
+//Pages
+import Menu from "./pages/Menu";
+import IT from "./pages/IT";
 
 function App() {
+  const [isMenuPage, setIsMenuPage] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <NextUIProvider>
+      <main className="dark text-foreground bg-background">
+        <Switch
+          size="lg"
+          onClick={() => {
+            setIsMenuPage(!isMenuPage);
+          }}
+        ></Switch>
+        {isMenuPage ? <IT /> : <Menu />}
+      </main>
+    </NextUIProvider>
   );
 }
 
