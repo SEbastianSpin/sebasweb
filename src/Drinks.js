@@ -4,7 +4,7 @@ export default function Drinks() {
     <div className="flex w-full flex-col items-center">
       <Tabs aria-label="Options of drinks" size={"lg"}>
         <Tab key="hot" title="Hot Chocolate" className="flex flex-wrap">
-          <Card isFooterBlurred radius="lg" className="border-none">
+          <Card isFooterBlurred radius="lg" className="border-none flex-1 ">
             <h1 className="center">Roses</h1>
             <Image
               isBlurred
@@ -15,7 +15,7 @@ export default function Drinks() {
             />
           </Card>
 
-          <Card isFooterBlurred radius="lg" className="border-none">
+          <Card isFooterBlurred radius="lg" className="border-none flex-1">
             <h1 className="center">Caramel</h1>
             <Image
               isBlurred
@@ -26,7 +26,7 @@ export default function Drinks() {
             />
           </Card>
 
-          <Card isFooterBlurred radius="lg" className="border-none">
+          <Card isFooterBlurred radius="lg" className="border-none flex-1">
             <h1 className="center">Cherry</h1>
             <Image
               isBlurred
@@ -37,7 +37,7 @@ export default function Drinks() {
             />
           </Card>
 
-          <Card isFooterBlurred radius="lg" className="border-none">
+          <Card isFooterBlurred radius="lg" className="border-none flex-1">
             <h1 className="center">Malina</h1>
             <Image
               isBlurred

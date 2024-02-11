@@ -3,28 +3,41 @@ import { motion } from "framer-motion";
 import { InView } from "react-intersection-observer";
 import { Card, CardBody, Image } from "@nextui-org/react";
 
-function CardEntry({ imageUrl, title, description, isVisible }) {
-  const cardVariants = {
-    hidden: { opacity: 0, y: -50 },
-    visible: { opacity: 1, y: 0 },
-  };
+// function CardEntry({ imageUrl, title, description, isVisible }) {
+//   const cardVariants = {
+//     hidden: { opacity: 0, y: -50 },
+//     visible: { opacity: 1, y: 0 },
+//   };
 
-  return (
-    <motion.div
-      initial="hidden"
-      animate={isVisible ? "visible" : "hidden"}
-      variants={cardVariants}
-    >
-      <Card className="w-96 mt-5">
-        <Image isZoomed width={800} src={imageUrl} classNames="m-5" />
-        <CardBody>
-          <h2 className="text-xl font-bold mb-4">{title}</h2>
-          <p>{description}</p>
-        </CardBody>
-      </Card>
-    </motion.div>
-  );
-}
+//   return (
+//     <motion.div
+//       initial="hidden"
+//       animate={isVisible ? "visible" : "hidden"}
+//       variants={cardVariants}
+//       style={{
+//         flex: "1 0 calc(20% - 2%)",
+//         maxHeight: "600px", // Set a maximum height for the card
+//         display: "flex",
+//         flexDirection: "column",
+//       }}
+//     >
+//       <Card>
+//         <Image
+//           isZoomed
+//           width="90%"
+//           height="auto"
+//           style={{ maxHeight: "250px", objectFit: "cover" }}
+//           src={imageUrl}
+//           alt=""
+//         />
+//         <CardBody>
+//           <h2 className="text-xl font-bold mb-4">{title}</h2>
+//           <p>{description}</p>
+//         </CardBody>
+//       </Card>
+//     </motion.div>
+//   );
+// }
 
 export default function Entries() {
   const Dishes = [
@@ -59,21 +72,39 @@ export default function Entries() {
 
   return (
     <InView as="div" onChange={(inView, entry) => setIsVisible(inView)}>
-      <div
-        style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
-      >
-        {Dishes.map((dish) => {
-          return (
-            <div style={{ width: "400px", height: "400px" }}>
-              <CardEntry
-                imageUrl={dish.imageUrl}
-                title={dish.title}
-                description={dish.description}
-                isVisible={isVisible}
+      <div className="flex flex-wrap">
+        {Dishes.map((dish) => (
+          <motion.div
+            key={dish.name}
+            initial="hidden"
+            animate={isVisible ? "visible" : "hidden"}
+            variants={{
+              hidden: { opacity: 0, y: -50 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            style={{
+              flex: "1 2 calc(20% - 1vw)",
+              maxHeight: "600px", // Apply the same max height here
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <Card>
+              <Image
+                isZoomed
+                width="100%"
+                height="auto" // Adjust height to auto
+                style={{ maxHeight: "250px", objectFit: "cover" }} // Enforce max height and object-fit here as well
+                src={dish.imageUrl}
+                alt=""
               />
-            </div>
-          );
-        })}
+              <CardBody>
+                <h2 className="text-xl font-bold mb-4">{dish.title}</h2>
+                <p>{dish.description}</p>
+              </CardBody>
+            </Card>
+          </motion.div>
+        ))}
       </div>
     </InView>
   );

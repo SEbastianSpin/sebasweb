@@ -77,7 +77,7 @@ export default function Menu() {
             <motion.span
               key={index}
               variants={letterVariants}
-              style={{ fontSize: "4em" }}
+              style={{ fontSize: "1em" }}
             >
               {char}
             </motion.span>
@@ -95,7 +95,7 @@ export default function Menu() {
             <motion.span
               key={index}
               variants={letterVariants}
-              style={{ fontSize: "3em" }}
+              style={{ fontSize: "1.5em" }}
             >
               {char}
             </motion.span>
@@ -103,24 +103,26 @@ export default function Menu() {
         </AnimatedDiv>
       </div>
       <div className="w-full h-screen" id="drinks">
+        <h1 className="text-4xl font-extrabold text-center pt-16">Drinks</h1>
         <Drinks></Drinks>
       </div>
       <div className="w-full h-screen" id="entries">
         <h1 className="text-4xl font-extrabold text-center pt-16">Entries</h1>
         <Entries />
       </div>
-      <div className="w-full h-screen" id="maindishes">
-        <h1 className="text-6xl font-extrabold text-center pt-16">
+      <div id="maindishes">
+        <h1 className="text-4xl font-extrabold text-center pt-16">
           Random Main Dishes
         </h1>
         <MainDishes />
       </div>
       <div
-        className="w-full h-screen flex items-center justify-center"
+        className="w-full h-screen flex items-center justify-center flex-col"
         id="deserts"
       >
+        <h1 className="text-2xl  text-center pt-16">Deserts</h1>
         <h1 className="text-6xl font-extrabold text-center">
-          I don't know how to cook deserts. I will just but something from the
+          I don't know how to cook deserts. I will just buy something from the
           store.
         </h1>
       </div>

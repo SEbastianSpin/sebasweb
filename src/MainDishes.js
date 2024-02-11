@@ -11,10 +11,10 @@ function CardEntry({ imageUrl, title, description }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 1, delay: 0.5 }}
     >
-      <Card className="w-96 mt-5">
-        <Image isZoomed width={800} src={imageUrl} classNames="m-5" />
+      <Card>
+        <Image isZoomed width={800} src={imageUrl} classNames="m-3" />
         <CardBody>
-          <h2 className="text-xl font-bold mb-4">{title}</h2>
+          <h2 className="text-m font-bold mb-4">{title}</h2>
           <p>{description}</p>
         </CardBody>
       </Card>
@@ -78,17 +78,18 @@ export default function MainDishes() {
   return (
     <InView triggerOnce={true}>
       {({ inView }) => (
-        <>
+        <div className="flex wfull  flex-col">
           {menuItems.map((item, index) => (
             <CardEntry
               key={index}
               imageUrl={item.imageUrl}
               title={item.title}
               description={item.description}
+              fullWidth
             />
           ))}
           {isVisible}
-        </>
+        </div>
       )}
     </InView>
   );
