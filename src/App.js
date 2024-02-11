@@ -18,11 +18,9 @@ function App() {
   return (
     <NextUIProvider>
       <main
-        className={
-          isLightTheme
-            ? "light"
-            : "dark" + " text-foreground bg-background flex flex-col text-base"
-        }
+        className={`${
+          isLightTheme ? "light" : "dark"
+        } text-foreground bg-background flex flex-col text-base"`}
       >
         <div className="flex justify-between">
           <div>

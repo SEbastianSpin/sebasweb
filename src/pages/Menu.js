@@ -40,12 +40,14 @@ export default function Menu() {
 
   return (
     <div className="text-base">
-      <Navbar shouldHideOnScroll className="text-4xl">
+      <Navbar shouldHideOnScroll>
         <NavbarContent className="sm:flex gap-4 justify-center items-center">
           <NavbarItem>
             <Link href="#drinks">Drinks</Link>
           </NavbarItem>
-          <NavbarItem>Entries</NavbarItem>
+          <NavbarItem>
+            <Link href="#entries">Entries </Link>
+          </NavbarItem>
         </NavbarContent>
 
         <NavbarBrand
@@ -93,7 +95,7 @@ export default function Menu() {
             <motion.span
               key={index}
               variants={letterVariants}
-              style={{ fontSize: "2em" }}
+              style={{ fontSize: "3em" }}
             >
               {char}
             </motion.span>
@@ -103,8 +105,8 @@ export default function Menu() {
       <div className="w-full h-screen" id="drinks">
         <Drinks></Drinks>
       </div>
-      <div className="w-full h-screen">
-        <h1 className="text-6xl font-extrabold text-center pt-16">Entries</h1>
+      <div className="w-full h-screen" id="entries">
+        <h1 className="text-4xl font-extrabold text-center pt-16">Entries</h1>
         <Entries />
       </div>
       <div className="w-full h-screen" id="maindishes">
