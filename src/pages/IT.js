@@ -4,16 +4,27 @@ import {
   NavbarContent,
   NavbarItem,
 } from "@nextui-org/react";
-
-import { Card } from "@nextui-org/react";
 import { motion } from "framer-motion";
+import Mosaic from "../Mosaic";
 
 const projects = [
-  { id: 1, title: "Project 1" },
-  { id: 2, title: "Project 2" },
-  // Add more projects as needed
+  {
+    id: 1,
+    title: "Project 1",
+    tech: "JS",
+    description: "A project",
+    colSpan: 1,
+    rowSpan: 1,
+  },
+  {
+    id: 2,
+    title: "Project 2",
+    tech: "JS",
+    description: "A project",
+    colSpan: 2,
+    rowSpan: 2,
+  },
 ];
-
 export default function IT() {
   return (
     <>
@@ -21,28 +32,22 @@ export default function IT() {
         <NavbarBrand>
           <p className="font-bold text-inherit">SEBASTIANS</p>
         </NavbarBrand>
-        <NavbarContent className=" sm:flex gap-4" justify="center">
+        <NavbarContent className="sm:flex gap-4" justify="center">
           <NavbarItem>JS</NavbarItem>
-
           <NavbarItem>Other</NavbarItem>
-
           <NavbarItem>Main Dishes</NavbarItem>
-
           <NavbarItem>Deserts</NavbarItem>
         </NavbarContent>
       </Navbar>
 
-      <div className="flex flex-wrap justify-around">
-        {projects.map((project, index) => (
+      <div className="grid grid-cols-3 grid-rows-3 gap-4 h-screen w-full">
+        {projects.map((project) => (
           <motion.div
             key={project.id}
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: index * 0.5 }}
+            className={`col-span-${project.colSpan} row-span-${project.rowSpan}`}
           >
-            <Card hoverable>
-              <h3>{project.title}</h3>
-            </Card>
+            <Mosaic></Mosaic>
           </motion.div>
         ))}
       </div>
