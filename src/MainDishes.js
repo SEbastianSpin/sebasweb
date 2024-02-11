@@ -28,44 +28,44 @@ export default function MainDishes() {
       title: "Vegan Tantanmen Ramen",
       description:
         "Spicy ramen with vegan broth, tofu, and assorted vegetables.",
-      imageUrl: "URL_TO_IMAGE",
+      imageUrl: "",
     },
     {
       title: "Cevichocho Ecuatoriano",
       description:
         "Ecuadorian-inspired ceviche with chayote, corn, and plant-based protein.",
-      imageUrl: "URL_TO_IMAGE",
+      imageUrl: "",
     },
     {
       title: "Pad Thai Vegan",
       description:
         "Classic Pad Thai with rice noodles, tofu, peanuts, and lime.",
-      imageUrl: "URL_TO_IMAGE",
+      imageUrl: "",
     },
     {
       title: "Pho Vegan",
       description:
         "Vietnamese noodle soup with aromatic vegan broth, rice noodles, and herbs.",
-      imageUrl: "URL_TO_IMAGE",
+      imageUrl: "",
     },
     {
       title: "Fried Rice",
       description:
         "Stir-fried rice with mixed vegetables and tofu or plant-based protein.",
-      imageUrl: "URL_TO_IMAGE",
+      imageUrl: "",
     },
     {
       title: "Paneer Makhani",
       description:
         "Indian curry with tomato-based sauce, paneer, and aromatic spices.",
-      imageUrl: "URL_TO_IMAGE",
+      imageUrl: "",
     },
 
     {
       title: "Arepas",
       description:
         "Corn-based flatbread with a variety of fillings, such as cheese, beans, and avocado.",
-      imageUrl: "URL_TO_IMAGE",
+      imageUrl: "",
     },
   ];
 

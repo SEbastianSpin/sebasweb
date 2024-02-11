@@ -116,7 +116,7 @@ export default function Menu() {
         <MainDishes />
       </div>
       <div
-        className="w-full h-1/2 flex items-center justify-center"
+        className="w-full h-screen flex items-center justify-center"
         id="deserts"
       >
         <h1 className="text-6xl font-extrabold text-center">
