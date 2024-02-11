@@ -3,7 +3,7 @@ export default function Drinks() {
   return (
     <div className="flex w-full flex-col items-center">
       <Tabs aria-label="Options of drinks" size={"lg"}>
-        <Tab key="hot" title="Hot Beverages" className="flex flex-wrap">
+        <Tab key="hot" title="Hot Chocolate" className="flex flex-wrap">
           <Card isFooterBlurred radius="lg" className="border-none">
             <h1 className="center">Roses</h1>
             <Image

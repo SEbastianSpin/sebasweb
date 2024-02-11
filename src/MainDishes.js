@@ -60,6 +60,13 @@ export default function MainDishes() {
         "Indian curry with tomato-based sauce, paneer, and aromatic spices.",
       imageUrl: "URL_TO_IMAGE",
     },
+
+    {
+      title: "Arepas",
+      description:
+        "Corn-based flatbread with a variety of fillings, such as cheese, beans, and avocado.",
+      imageUrl: "URL_TO_IMAGE",
+    },
   ];
 
   const [isVisible, setIsVisible] = useState(false);
