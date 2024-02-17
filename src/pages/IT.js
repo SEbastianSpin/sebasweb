@@ -1,42 +1,58 @@
 import { useEffect } from "react";
-import {
-  Link,
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-} from "@nextui-org/react";
+import { Link } from "@nextui-org/react";
 
 import { motion, useAnimation } from "framer-motion";
 
 const projects = [
   {
+    id: 2,
+    title: "Toolkit for Advanced Computer Graphic",
+    tech: "Tauri, React, Rust",
+    description:
+      "Minimalist computer graphics application developed using Tauri and React. It encompasses a suite of algorithms for image processing and vector graphics, including filters, 3D projections of spheres with lighting effects, and vector graphics manipulation. The implementation leverages the efficiency of rust for Pixels , vector and 3D were implemented in JS",
+    colSpan: 2,
+    rowSpan: 1,
+    link: "https://github.com/SEbastianSpin/comg",
+  },
+
+  {
     id: 1,
     title: "Web app",
     tech: "React, Mui & Firebase ",
     description:
-      "Secure scalable web app to collect data and display it in a Map with powerful filters using auth and firestore.",
+      "Dynamic web application built with React and Firebase, offering secure authentication, role-based access, data collections filtering and display of user on the map  . It enables efficient data collection, filtering, and display, tailored to user roles and permissions. With its integration of Firebase's database and authentication services",
     colSpan: 1,
-    rowSpan: 1,
+    rowSpan: 2,
     link: "https://alzheimer-6788.web.app/",
   },
+
   {
-    id: 2,
-    title: "Computer Graphics",
-    tech: "Tauri, React, Rust",
-    description:
-      "A project to learn about computer graphics includes vector  pixels  and 3D rendering low level algorithms implements in rust or JS",
+    id: 7,
+    title: "Pong Game",
+    tech: "C++",
+    colSpan: 3,
+    rowSpan: 3,
+    link: "https://github.com/SEbastianSpin/PONG",
+  },
+
+  {
+    id: 6,
+    title: "Embedded system Music Player",
+    tech: "Linux, Buildroot, Python",
     colSpan: 2,
-    rowSpan: 2,
+    rowSpan: 1,
+    link: "https://github.com/SEbastianSpin/nodeQR",
+    description:
+      "Music player for embedded systems  with a web interface and the use buttons for control",
   },
 
   {
     id: 3,
     title: "MiniPaint",
     tech: "C#",
-    description: "As the name says",
+    description: "A Simple Windows Forms Paint Application in C#",
     colSpan: 3,
-    rowSpan: 1,
+    rowSpan: 3,
     link: "https://github.com/SEbastianSpin/MiniPaint",
   },
 
@@ -45,11 +61,23 @@ const projects = [
     title: "Agent Systems",
     tech: "Java & Jade",
     description:
-      "Implementing agent systems that can move by themself to reach a target and form a group",
+      "Complex Map Navigation and Race Condition Management for Autonomous Agents in JADE",
     colSpan: 2,
     rowSpan: 2,
     link: "https://github.com/SEbastianSpin/AgentCoalition",
   },
+
+  {
+    id: 5,
+    title: "QR Code Generator",
+    tech: "Node JS",
+    colSpan: 3,
+    rowSpan: 2,
+    link: "https://github.com/SEbastianSpin/nodeQR",
+    description: "Discord for input and output of QR codes",
+  },
+
+  //
 ];
 
 const AnimatedDiv = motion.div;
@@ -72,11 +100,11 @@ export default function IT() {
   const getWidth = (colSpan) => {
     switch (colSpan) {
       case 1:
-        return "w-1/2";
+        return "sm:w-1/2";
       case 2:
-        return "w-1/4";
+        return "sm:w-1/4";
       case 3:
-        return "w-1/8";
+        return "sm:w-1/8";
       default:
         return "w-full";
     }
@@ -88,6 +116,8 @@ export default function IT() {
         return "h-96";
       case 2:
         return "h-48";
+      case 3:
+        return "h-24";
       default:
         return "h-auto";
     }
@@ -95,7 +125,7 @@ export default function IT() {
 
   return (
     <>
-      <Navbar shouldHideOnScroll>
+      {/* <Navbar shouldHideOnScroll>
         <NavbarBrand>SEBASTIANS</NavbarBrand>
         <NavbarContent>
           <NavbarItem>JS</NavbarItem>
@@ -103,9 +133,9 @@ export default function IT() {
           <NavbarItem>Main Dishes</NavbarItem>
           <NavbarItem>Deserts</NavbarItem>
         </NavbarContent>
-      </Navbar>
+      </Navbar> */}
 
-      <div className="flex flex-col justify-center h-screen">
+      <div className="flex flex-col justify-center ">
         <AnimatedDiv
           initial="hidden"
           animate={controls}

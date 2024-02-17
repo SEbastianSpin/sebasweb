@@ -7,6 +7,8 @@ import { Switch } from "@nextui-org/react";
 
 //icons
 import { FaSun, FaMoon } from "react-icons/fa";
+import { MdOutlineFastfood } from "react-icons/md";
+import { FaCode } from "react-icons/fa";
 
 //Pages
 import Menu from "./pages/Menu";
@@ -23,13 +25,15 @@ function App() {
         } text-foreground bg-background flex flex-col text-base"`}
       >
         <div className="flex justify-between">
-          <div>
+          <div className="flex flex-row">
+            <FaCode />
             <Switch
               size="lg"
               onClick={() => {
                 setIsMenuPage(!isMenuPage);
               }}
             ></Switch>
+            <MdOutlineFastfood />
           </div>
           <div>
             <Switch
